@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTransform API — High-Frequency Document Parsing & Extraction</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0d1117',
+                        cardBg: '#161b22',
+                        borderCol: '#30363d',
+                        accentBlue: '#58a6ff',
+                        accentGreen: '#238636'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-200 antialiased selection:bg-accentBlue selection:text-black">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 border-b border-borderCol bg-darkBg/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-accentBlue flex items-center justify-center font-bold text-black">DT</div>
+                <span class="font-bold text-lg text-white">DataTransform API</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="#features" class="hover:text-accentBlue transition">Features</a>
+                <a href="#docs" class="hover:text-accentBlue transition">Documentation</a>
+                <a href="#pricing" class="hover:text-accentBlue transition">Pricing</a>
+                <a href="#contact" class="hover:text-accentBlue transition">Contact</a>
+            </nav>
+            <div>
+                <a href="#pricing" class="bg-accentGreen hover:bg-[#2ea043] text-white font-medium px-4 py-2 rounded-lg text-sm transition shadow-sm">Get API Key</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-24 px-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="inline-block bg-blue-500/10 text-accentBlue border border-blue-500/20 px-3 py-1 rounded-full text-xs font-semibold mb-6">v8.5 5-Tier Scale Engine Live</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+                Automated Document to JSON <span class="text-accentBlue">Parsing at Scale</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                High-frequency programmatic data conversion, receipt extraction, and structured schema processing for modern developers. Zero latency, 99.9% uptime SLA.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#pricing" class="bg-accentBlue text-black font-semibold px-6 py-3 rounded-lg hover:bg-blue-400 transition shadow-lg">Choose Your Plan</a>
+                <a href="#docs" class="bg-cardBg border border-borderCol text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-800 transition">View API Reference</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Code / Documentation Preview -->
+    <section id="docs" class="py-16 px-6 max-w-5xl mx-auto">
+        <div class="bg-cardBg border border-borderCol rounded-xl p-6 shadow-xl">
+            <div class="flex items-center justify-between mb-4 pb-4 border-b border-borderCol">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="text-xs text-gray-400 ml-2 font-mono">POST /v1/convert</span>
+                </div>
+                <span class="text-xs text-accentBlue font-mono">Python / FastAPI SDK</span>
+            </div>
+            <pre class="overflow-x-auto text-sm font-mono text-gray-300 bg-[#0d1117] p-4 rounded-lg border border-borderCol"><code><span class="text-purple-400">import</span> requests
+
+url = <span class="text-green-300">"https://api.datatransform.io/v1/convert"</span>
+headers = {<span class="text-green-300">"x-api-key"</span>: <span class="text-green-300">"dt_pro_sec_****************"</span>}
+payload = {<span class="text-green-300">"document"</span>: <span class="text-green-300">"INVOICE-2026-INV Total: $1,250.00 USD"</span>}
+
+response = requests.post(url, json=payload, headers=headers)
+print(response.json())</code></pre>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4">Engineered for Maximum Throughput</h2>
+            <p class="text-gray-400">Everything you need to integrate robust data extraction into your applications.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-cardBg border border-borderCol p-8 rounded-xl">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-accentBlue font-bold text-xl mb-6">⚡</div>
+                <h3 class="text-xl font-semibold text-white mb-3">Sub-millisecond Heuristics</h3>
+                <p class="text-gray-400 text-sm">Optimized asynchronous processing pipeline built on FastAPI and uvloop to handle thousands of requests per second.</p>
+            </div>
+            <div class="bg-cardBg border border-borderCol p-8 rounded-xl">
+                <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center text-accentGreen font-bold text-xl mb-6">🔒</div>
+                <h3 class="text-xl font-semibold text-white mb-3">Instant Key Provisioning</h3>
+                <p class="text-gray-400 text-sm">Automatic API key generation and webhook validation upon successful Stripe checkout with zero manual overhead.</p>
+            </div>
+            <div class="bg-cardBg border border-borderCol p-8 rounded-xl">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-400 font-bold text-xl mb-6">📈</div>
+                <h3 class="text-xl font-semibold text-white mb-3">Real-time Telemetry</h3>
+                <p class="text-gray-400 text-sm">Instant Discord alerts and admin web dashboards monitoring conversion success rates and multi-tier revenue.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section (5 Tiers) -->
+    <section id="pricing" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4">Simple, Transparent Pricing</h2>
+            <p class="text-gray-400">Flexible plans tailored for every scale, from indie hobbyists to enterprise corporations.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch">
+            
+            <!-- 1. Free Tier -->
+            <div class="bg-cardBg border border-borderCol p-6 rounded-xl flex flex-col justify-between transition hover:border-gray-500">
+                <div>
+                    <h3 class="text-base font-semibold text-white mb-1">Free Tier</h3>
+                    <p class="text-gray-400 text-xs mb-4">For testing and personal use.</p>
+                    <div class="text-2xl font-bold text-white mb-4">$0 <span class="text-xs text-gray-400 font-normal">/month</span></div>
+                    <ul class="space-y-2.5 text-xs text-gray-300 mb-6">
+                        <li>✓ 500 requests / mo</li>
+                        <li>✓ Basic JSON parsing</li>
+                        <li>✓ Community support</li>
+                        <li>✓ Standard endpoints</li>
+                    </ul>
+                </div>
+                <a href="#pricing" class="block text-center bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 rounded-lg transition text-xs">Get Started</a>
+            </div>
+
+            <!-- 2. Starter Tier -->
+            <div class="bg-cardBg border border-borderCol p-6 rounded-xl flex flex-col justify-between transition hover:border-gray-500">
+                <div>
+                    <h3 class="text-base font-semibold text-white mb-1">Starter</h3>
+                    <p class="text-gray-400 text-xs mb-4">For indie hackers and MVPs.</p>
+                    <div class="text-2xl font-bold text-white mb-4">$9 <span class="text-xs text-gray-400 font-normal">/month</span></div>
+                    <ul class="space-y-2.5 text-xs text-gray-300 mb-6">
+                        <li>✓ 5,000 requests / mo</li>
+                        <li>✓ Standard JSON parsing</li>
+                        <li>✓ Email support</li>
+                        <li>✓ Standard rate limits</li>
+                    </ul>
+                </div>
+                <a href="#pricing" class="block text-center bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 rounded-lg transition text-xs">Get Starter</a>
+            </div>
+
+            <!-- 3. Professional Tier (Highlighted) -->
+            <div class="bg-cardBg border-2 border-accentBlue p-6 rounded-xl flex flex-col justify-between relative shadow-xl transform lg:-translate-y-2">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accentBlue text-black px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider">Most Popular</div>
+                <div>
+                    <h3 class="text-base font-semibold text-white mb-1">Professional</h3>
+                    <p class="text-gray-400 text-xs mb-4">For growing production apps.</p>
+                    <div class="text-2xl font-bold text-white mb-4">$50 <span class="text-xs text-gray-400 font-normal">/month</span></div>
+                    <ul class="space-y-2.5 text-xs text-gray-300 mb-6">
+                        <li>✓ 50,000 requests / mo</li>
+                        <li>✓ Advanced heuristic models</li>
+                        <li>✓ Instant API webhook key gen</li>
+                        <li>✓ Priority Discord support</li>
+                    </ul>
+                </div>
+                <a href="#pricing" class="block text-center bg-accentBlue text-black font-semibold py-2 rounded-lg hover:bg-blue-400 transition text-xs shadow-md">Get Professional</a>
+            </div>
+
+            <!-- 4. Enterprise Tier -->
+            <div class="bg-cardBg border border-borderCol p-6 rounded-xl flex flex-col justify-between transition hover:border-gray-500">
+                <div>
+                    <h3 class="text-base font-semibold text-white mb-1">Enterprise</h3>
+                    <p class="text-gray-400 text-xs mb-4">For established businesses.</p>
+                    <div class="text-2xl font-bold text-white mb-4">$99 <span class="text-xs text-gray-400 font-normal">/month</span></div>
+                    <ul class="space-y-2.5 text-xs text-gray-300 mb-6">
+                        <li>✓ 200,000 requests / mo</li>
+                        <li>✓ Custom schema extraction</li>
+                        <li>✓ Dedicated server nodes</li>
+                        <li>✓ 24/7 SLA Guarantee</li>
+                    </ul>
+                </div>
+                <a href="#pricing" class="block text-center bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 rounded-lg transition text-xs">Get Enterprise</a>
+            </div>
+
+            <!-- 5. Elite Tier -->
+            <div class="bg-cardBg border border-borderCol p-6 rounded-xl flex flex-col justify-between transition hover:border-gray-500">
+                <div>
+                    <h3 class="text-base font-semibold text-white mb-1">Elite Scale</h3>
+                    <p class="text-gray-400 text-xs mb-4">For high-volume corporations.</p>
+                    <div class="text-2xl font-bold text-white mb-4">$299 <span class="text-xs text-gray-400 font-normal">/month</span></div>
+                    <ul class="space-y-2.5 text-xs text-gray-300 mb-6">
+                        <li>✓ Unlimited monthly requests</li>
+                        <li>✓ Custom AI model training</li>
+                        <li>✓ Dedicated engineering rep</li>
+                        <li>✓ Custom contract & invoicing</li>
+                    </ul>
+                </div>
+                <a href="#pricing" class="block text-center bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 rounded-lg transition text-xs">Get Elite</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="border-t border-borderCol py-12 px-6 mt-20 text-center text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-white">DataTransform API</span>
+                <span>© 2026 All rights reserved.</span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-accentBlue transition">Privacy Policy</a>
+                <a href="#" class="hover:text-accentBlue transition">Terms of Service</a>
+                <a href="#" class="hover:text-accentBlue transition">Support</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
